@@ -15,12 +15,9 @@ import javax.persistence.Table;
 @AllArgsConstructor
 
 @Entity
-@Table(name="domicilio")
-public class Domicilio extends Base{
+@Table(name="localidad")
+public class Localidad extends Base{
 
-    @Column(name = "calle")
-    private String calle;
-    @Column(name = "numero")
-    private String numero;
-
+    @Column(name = "denominacion")
+    private String denominacion;
 }

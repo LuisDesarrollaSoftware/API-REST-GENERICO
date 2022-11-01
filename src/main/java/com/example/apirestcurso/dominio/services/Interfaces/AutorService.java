@@ -1,6 +1,6 @@
 package com.example.apirestcurso.dominio.services.Interfaces;
 
-import com.example.apirestcurso.dominio.entities.Persona;
+import com.example.apirestcurso.dominio.entities.Autor;
 
-public interface PersonaService extends BaseService<Persona,Long> {
+public interface AutorService extends BaseService<Autor,Long> {
 }

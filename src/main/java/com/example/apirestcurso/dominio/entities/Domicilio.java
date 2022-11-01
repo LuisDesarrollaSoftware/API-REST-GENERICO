@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,13 +13,16 @@ import javax.persistence.Table;
 @AllArgsConstructor
 
 @Entity
-@Table(name="autor")
-public class Autor extends Base{
+@Table(name="domicilio")
+public class Domicilio extends Base{
 
-    @Column(name = "nombre")
-    private String nombre;
-    @Column(name = "apellido")
-    private String apellido;
-    @Column(name = "biografia", length = 1500)
-    private int dni;
+    @Column(name = "calle")
+    private String calle;
+    @Column(name = "numero")
+    private String numero;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "fk_localidad")
+    private Localidad localidad;
+
 }

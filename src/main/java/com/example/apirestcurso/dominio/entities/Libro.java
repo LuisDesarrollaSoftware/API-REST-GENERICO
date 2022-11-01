@@ -5,9 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,12 +15,19 @@ import javax.persistence.Table;
 @AllArgsConstructor
 
 @Entity
-@Table(name="domicilio")
-public class Domicilio extends Base{
+@Table(name = "libro")
+public class Libro extends Base {
 
-    @Column(name = "calle")
-    private String calle;
-    @Column(name = "numero")
-    private String numero;
+    @Column(name = "titulo")
+    private String titulo;
+    @Column(name = "fecha")
+    private int fecha;
+    @Column(name = "genero")
+    private String genero;
+    @Column(name = "paginas")
+    private int paginas;
+
+    @ManyToMany(cascade = CascadeType.REFRESH)
+    private List<Autor> autores= new ArrayList<Autor>();
 
 }

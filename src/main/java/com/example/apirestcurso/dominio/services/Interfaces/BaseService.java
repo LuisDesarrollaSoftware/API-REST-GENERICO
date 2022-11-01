@@ -1,4 +1,4 @@
-package com.example.apirestcurso.dominio.services;
+package com.example.apirestcurso.dominio.services.Interfaces;
 
 import com.example.apirestcurso.dominio.entities.Base;
 

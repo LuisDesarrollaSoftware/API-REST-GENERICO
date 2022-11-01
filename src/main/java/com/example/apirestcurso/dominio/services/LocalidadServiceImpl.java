@@ -1,19 +1,21 @@
 package com.example.apirestcurso.dominio.services;
 
-import com.example.apirestcurso.dominio.entities.Autor;
+
+import com.example.apirestcurso.dominio.entities.Localidad;
 import com.example.apirestcurso.dominio.repositories.AutorRepository;
 import com.example.apirestcurso.dominio.repositories.BaseRepository;
-import com.example.apirestcurso.dominio.services.Interfaces.AutorService;
+import com.example.apirestcurso.dominio.repositories.LocalidadRepository;
+import com.example.apirestcurso.dominio.services.Interfaces.LocalidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AutorServiceImpl extends BaseServiceImpl<Autor, Long> implements AutorService {
+public class LocalidadServiceImpl extends BaseServiceImpl<Localidad, Long> implements LocalidadService {
 
     @Autowired
-    private AutorRepository autorRepository;
+    private LocalidadRepository localidadRepository;
 
-    public AutorServiceImpl(BaseRepository<Autor, Long> repository) {
+    public LocalidadServiceImpl(BaseRepository<Localidad, Long> repository) {
         super(repository);
     }
 

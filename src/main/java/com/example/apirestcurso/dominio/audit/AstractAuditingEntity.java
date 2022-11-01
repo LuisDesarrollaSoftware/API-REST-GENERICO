@@ -6,9 +6,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import static javax.persistence.TemporalType.TIMESTAMP;
-
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.Date;
 
 
@@ -16,15 +15,15 @@ import java.util.Date;
 @Setter
 @EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
-public abstract class Audit {
+public abstract class AstractAuditingEntity {
 
-    @Column(name = "created_date")
-    @Temporal(TemporalType.DATE)
     @CreatedDate
+    @Column(name = "created_date", updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
-    @Column(name = "modified_date")
-    @Temporal(TemporalType.DATE)
     @LastModifiedDate
-    private Date modifiedDate;
+    @Column(name = "last_modified_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
 }
